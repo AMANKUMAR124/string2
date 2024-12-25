@@ -1,0 +1,200 @@
+1. Write a simple String program to take input from the user?
+
+To take input from the user in Java, you can use the Scanner class.
+
+Example:
+
+java
+Copy code
+import java.util.Scanner;
+
+public class StringInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();  // Reads the entire line of input
+        
+        System.out.println("You entered: " + userInput);
+        
+        scanner.close();  // Close the scanner object
+    }
+}
+Explanation:
+
+The program uses Scanner to read a string entered by the user.
+nextLine() method reads the entire line of text including spaces.
+2. How do you concatenate two strings in Java? Give an example?
+
+You can concatenate two strings in Java using the + operator or the concat() method.
+
+Example using the + operator:
+
+java
+Copy code
+public class StringConcatenation {
+    public static void main(String[] args) {
+        String str1 = "Hello, ";
+        String str2 = "World!";
+        
+        String result = str1 + str2;  // Concatenation using + operator
+        System.out.println(result);   // Output: Hello, World!
+    }
+}
+Example using concat() method:
+
+java
+Copy code
+public class StringConcatenation {
+    public static void main(String[] args) {
+        String str1 = "Hello, ";
+        String str2 = "World!";
+        
+        String result = str1.concat(str2);  // Concatenation using concat() method
+        System.out.println(result);         // Output: Hello, World!
+    }
+}
+3. How do you find the length of a string in Java? Explain with an example?
+
+To find the length of a string in Java, you can use the length() method.
+
+Example:
+
+java
+Copy code
+public class StringLength {
+    public static void main(String[] args) {
+        String str = "Hello, Java!";
+        
+        int length = str.length();  // Using the length() method to find the length of the string
+        System.out.println("Length of the string: " + length);  // Output: 12
+    }
+}
+Explanation:
+
+The length() method returns the number of characters in the string, including spaces and punctuation.
+4. How do you compare two strings in Java? Give an Example?
+
+In Java, you can compare two strings using the equals() method or the compareTo() method.
+
+Example using equals() method:
+
+java
+Copy code
+public class StringComparison {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "Hello";
+        String str3 = "World";
+        
+        System.out.println(str1.equals(str2));  // true, because they are the same
+        System.out.println(str1.equals(str3));  // false, because they are different
+    }
+}
+Example using compareTo() method:
+
+java
+Copy code
+public class StringComparison {
+    public static void main(String[] args) {
+        String str1 = "apple";
+        String str2 = "banana";
+        
+        int result = str1.compareTo(str2);  // Compares lexicographically
+        
+        if (result == 0) {
+            System.out.println("Both strings are equal");
+        } else if (result < 0) {
+            System.out.println("str1 is lexicographically less than str2");
+        } else {
+            System.out.println("str1 is lexicographically greater than str2");
+        }
+    }
+}
+Explanation:
+
+equals() checks if the two strings are exactly the same.
+compareTo() compares strings lexicographically (based on Unicode values).
+5. Write a program to find the length of the string "refrigerator"?
+
+This program uses the length() method to find the length of the string "refrigerator".
+
+Example:
+
+java
+Copy code
+public class StringLengthExample {
+    public static void main(String[] args) {
+        String str = "refrigerator";
+        int length = str.length();  // Find the length of the string
+        System.out.println("Length of 'refrigerator': " + length);  // Output: 12
+    }
+}
+6. Write a program to check if the letter 'e' is present in the word 'Umbrella'?
+
+You can use the contains() method or indexOf() method to check if a specific letter is present in a string.
+
+Example:
+
+java
+Copy code
+public class StringCheckExample {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        
+        if (word.contains("e")) {
+            System.out.println("The letter 'e' is present in the word 'Umbrella'.");
+        } else {
+            System.out.println("The letter 'e' is not present in the word 'Umbrella'.");
+        }
+    }
+}
+Alternatively, using indexOf():
+
+java
+Copy code
+public class StringCheckExample {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        
+        if (word.indexOf('e') != -1) {
+            System.out.println("The letter 'e' is present in the word 'Umbrella'.");
+        } else {
+            System.out.println("The letter 'e' is not present in the word 'Umbrella'.");
+        }
+    }
+}
+Explanation:
+
+contains() checks if the string contains the specified character.
+indexOf() returns the index of the first occurrence of the character (or -1 if not found).
+7. Write a program to delete all consonants from the string "Hello, have a good day".
+
+You can loop through the string and remove consonants by checking whether each character is a consonant.
+
+Example:
+
+java
+Copy code
+public class RemoveConsonants {
+    public static void main(String[] args) {
+        String input = "Hello, have a good day";
+        String result = "";
+        
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            
+            // Check if the character is a vowel or space
+            if ("AEIOUaeiou ".indexOf(c) != -1) {
+                result += c;  // Keep vowels and spaces
+            }
+        }
+        
+        System.out.println("String after removing consonants: " + result);
+    }
+}
+Explanation:
+
+The loop goes through each character of the string.
+It checks if the character is a vowel (A, E, I, O, U and their lowercase counterparts) or a space.
+Only vowels and spaces are retained, and consonants are deleted.
